@@ -660,6 +660,7 @@
     transform: translateY(-50%);
   }
   input[type="checkbox"]:checked + label:before {
+
     border: 1px solid #485870;
     background:#2575fc;
   }

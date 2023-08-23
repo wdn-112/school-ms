@@ -6,8 +6,8 @@
             <div class="card-header" >
                 <img src="assets/img/logo.png" class="logo">  
                 <div class="head">
-                    <h3>SMK Fajar Utama</h3>
-                    <h4>LMS System</h4>
+                    <h5>SMK Fajar Utama</h5>
+                    <h6>LMS System</h6>
                 </div>
             </div>
 
@@ -16,14 +16,16 @@
                     <div class="form-group">
                         <label for="">NIS/Kode Guru</label>
                         <input type="text" class="form-control" placeholder="Nis/Kode Guru" id="user">
+                        <span id="user-err"></span>
                     </div>
                     <div class="form-group">
                         <label for="">Password</label>
                         <input type="password" class="form-control" placeholder="Password" id="pass">
+                        <span id="pass-err"></span>
                     </div>
                     <input type="checkbox" id="check-pass"><label for="check-pass">Show Password</label>
                     <div class="form-group">
-                        <button type="submit" name="login_btn" class="btn btn--bordered btn--arrow btn-submit">Login</button>
+                        <button type="submit" id="login-btn" name="login_btn" class="btn btn--bordered btn--arrow btn-submit">Login</button>
                         <button class="btn cancel-btn" id="hapus">Hapus</button>
                     </div>
                 </form>
