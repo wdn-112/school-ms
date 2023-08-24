@@ -1,7 +1,7 @@
 :root {
     --main:#dbdddf;
     --secondary:#696969;
-    --accent:#0369a8;
+    --accent:hsl(135, 29%, 70%);
     --content:#ebebeb;
     --shadow:#c5c5c5;
 }
@@ -20,13 +20,6 @@ body {
     border-radius: 7px;
     max-width:24rem;
 }
-/* .cards:after {
-    content: "";
-    width:200px;
-    height:200px;
-    background-color: red;
-    position: absolute;
-} */
 .cards .card-header {
     text-align: center;
     padding:1rem;

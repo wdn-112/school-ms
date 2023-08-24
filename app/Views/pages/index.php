@@ -4,7 +4,7 @@
         <div class="cards">
 
             <div class="card-header" >
-                <img src="assets/img/logo.png" class="logo">  
+                <img src="<?= base_url() ?>assets/img/logo.png" class="logo">  
                 <div class="head">
                     <h5>SMK Fajar Utama</h5>
                     <h6>LMS System</h6>
@@ -12,18 +12,26 @@
             </div>
 
             <div class="card-body">
-                <form action="" method="post">
+                <form action="login/check" method="post">
                     <div class="form-group">
                         <label for="">NIS/Kode Guru</label>
-                        <input type="text" class="form-control" placeholder="Nis/Kode Guru" id="user">
-                        <span id="user-err"></span>
+                        <input type="text" class="form-control" placeholder="Nis/Kode Guru" id="user" name='user'>
+                        <span id="user-err" ></span>
+                        <?php if(session()->getFlashdata('user'))
+                        {
+                            echo '<span class="form-err-msg" >'.session()->getFlashdata('user').'</span>';
+                        }?>
                     </div>
                     <div class="form-group">
                         <label for="">Password</label>
-                        <input type="password" class="form-control" placeholder="Password" id="pass">
-                        <span id="pass-err"></span>
+                        <input type="password" class="form-control" placeholder="Password" id="pass" name='pass'>
+                        <?php if(session()->getFlashdata('pass'))
+                        {
+                            echo '<span class="form-err-msg" >'.session()->getFlashdata('pass').'</span><br>';
+                        }?>
+                        <span id="pass-err"></span><br>
+                        <input type="checkbox" id="check-pass"><label for="check-pass">Show Password</label>
                     </div>
-                    <input type="checkbox" id="check-pass"><label for="check-pass">Show Password</label>
                     <div class="form-group">
                         <button type="submit" id="login-btn" name="login_btn" class="btn btn--bordered btn--arrow btn-submit">Login</button>
                         <button class="btn cancel-btn" id="hapus">Hapus</button>
@@ -40,7 +48,7 @@
     <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-J2SRB925J5"></script> -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script async src="js/main.js"></script>
+    <script async src="<?= base_url() ?>js/main.js"></script>
     
   </body>
 </html>
