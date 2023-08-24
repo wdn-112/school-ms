@@ -7,8 +7,11 @@ use App\Controllers\BaseController;
 class Admin extends BaseController
 {
     public function index()
-    {
-        $data['title']='Dashboard Admin';
+    {   $session = session();
+        $data = [
+            'title' =>'Dashboard Admin',
+            'username' => $session->get('user_name')
+            ];
         return view('pages/admin/dashboard', $data);
     }
 }

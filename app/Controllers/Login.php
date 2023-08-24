@@ -32,17 +32,22 @@ class Login extends BaseController
             if($password == $pass)
             {
                 $sess_data = [
+                    'user_id' =>$data['id_user'],
                     'user_name' => $data['username'],
                     'level' => $data['level'],
                     'logged_in' => true
                 ];
                 $session->set($sess_data);
                 if($sess_data['level']=='1')
-                {
+                {  
+                    $this->model->set('last_login', date('Y-m-d'))->where('username', $username)
+                    ->update();
                     return redirect()->to('admin/index');
                 }
                 elseif($sess_data['level']=='2')
                 {
+                    $this->model->set('last_login', date('Y-m-d'))->where('username', $username)
+                    ->update();
                     return redirect()->to('guru/index');
                 }
             }

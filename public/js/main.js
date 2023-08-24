@@ -8,14 +8,14 @@ $('#login-btn').on('click', function(e) {
     {
         $('#user-err').attr('class','form-err-msg');
         $('#user-err').html('Username Tidak Boleh Kosong');
-        e.preventDefault();
+        return false;
 
     }
     if($('#pass').val()=='')
     {
         $('#pass-err').attr('class','form-err-msg');
         $('#pass-err').html('Password Tidak Boleh Kosong');
-        e.preventDefault();
+        return false;
 
     }
 });
